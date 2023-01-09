@@ -50,14 +50,14 @@ class deer{
                     $(html).html(hour+" : "+minutes+" PM");
                 }
             }
-            if(hour < 12){
+            else if(hour < 12){
                 if(second == true){
                     $(html).html(hour+" : "+minutes+" : "+seconds+" AM");
                 }else{
                     $(html).html(hour+" : "+minutes+" AM");
                 }
             }
-            if(hour == 12){
+            else if(hour == 12){
                 if(second == true){
                     $(html).html(hour+" : "+minutes+" : "+seconds+" PM");
                 }else{
@@ -209,3 +209,7 @@ class deer{
     }
 }
 deer = new deer();
+deer.time({
+    format: "12hrs",
+    html:".home_time",
+});
